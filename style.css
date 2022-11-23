@@ -40,13 +40,22 @@
     
 }
 
-.conteudo-loja img{
+.img-roupa{
+    width: 550px;
+    height: 550px;
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+    
+   
+    
+}
+
+.img-roupa h3{
+    color: brown;
+}
+
+.conteudo-loja{
     width: 250px;
     height: 250px;
 }
-
-.conteudo-loja h3{
-    color: brown;
-    display: block;
-}
-
