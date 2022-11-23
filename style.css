@@ -27,5 +27,26 @@
 }
 
 .sociais {
-    padding: 20px;
+    padding: 25px;
+    background-color: rgba(128, 161, 150, 0.61);
+    margin-left: 10px;
+    border-bottom: 50px;
 }
+
+.tela img{
+    width: auto;
+    margin-top: -800px;
+    display: flex;
+    
+}
+
+.conteudo-loja img{
+    width: 250px;
+    height: 250px;
+}
+
+.conteudo-loja h3{
+    color: brown;
+    display: block;
+}
+
