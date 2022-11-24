@@ -45,17 +45,12 @@
     height: 550px;
     display: flex;
     padding: 50px;
-    justify-content: space-between;
-    
-   
-    
+    justify-content:flex-start;
 }
 
 .img-roupa h3{
-    color: brown;
+    color: rgb(38, 31, 140);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
 }
 
-.conteudo-loja{
-    width: 250px;
-    height: 250px;
-}

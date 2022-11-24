@@ -1,6 +1,6 @@
-<div class="container-fluid">
-   <div class="row text-center bg-light">
-    <div class="col-md-3">
+<div class="container-fluid ">
+   <div class="row text-center ">
+    <div class="col-md-3 footer">
       <h4> Institucional</h4>
       <p><a href="#">Home</a></p>
       <p><a href="#">Nossa Academia</a></p>
@@ -8,7 +8,7 @@
       <p><a href="#">Área do Cliente</a></p>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 footer">
       <h4>Atividades</h4>
       <ul class="navbar-nav">
         <li class="navbar-nav"><a href="#">Spinnig</a></li>
@@ -18,7 +18,7 @@
       </ul>
     </div>
     
-    <div class="col-md-3">
+    <div class="col-md-3 footer">
       <h4>Funcionamento</h4>
       <p>Segunda á Sábado - 06:00 ás 23:00</p>
       <p>Domingo - 07:00 ás 13:00</p>
