@@ -1,14 +1,16 @@
-<div class="container-fluid ">
+<div class="container-fluid footer">
    <div class="row text-center ">
     <div class="col-md-3 footer">
-      <h4> Institucional</h4>
-      <p><a href="#">Home</a></p>
-      <p><a href="#">Nossa Academia</a></p>
-      <p><a href="#">Conheca os Planos</a></p>
-      <p><a href="#">Área do Cliente</a></p>
+    <h4> Institucional</h4>
+    <ul class="navbar-nav">
+      <li class="navbar-nav"><a href="#">Home</a></li>
+      <li class="navbar-nav"><a href="#">Nossa Academia</a></li>
+      <li class="navbar-nav"><a href="#">Conheca os Planos</a></li>
+      <li class="navbar-nav"><a href="#">Área do Cliente</a></li>
+      </ul>
     </div>
 
-    <div class="col-md-3 footer">
+   <div class="col-md-3 footer">
       <h4>Atividades</h4>
       <ul class="navbar-nav">
         <li class="navbar-nav"><a href="#">Spinnig</a></li>
