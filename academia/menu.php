@@ -29,7 +29,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="roupas.php">Roupas</a>
-                <a class="dropdown-item" href="#">Suplementos</a>
+                <a class="dropdown-item" href="suplementos.php">Suplementos</a>
                 <a class="dropdown-item" href="#">Acessórios</a>
                 <a class="dropdown-item" href="mochilas.php">Mochilas</a>
                 

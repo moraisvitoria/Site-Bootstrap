@@ -22,12 +22,12 @@
                         <h3 class="card-text">Mochila Paloma</h3>
                         <h4>R$ 150,00</h4>
                         <!-- Botão para acionar modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Paloma">
-  Comprar
-</button>
-                    </div>
-                </div> 
+                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Paloma">
+                       Comprar
+                      </button>
             </div>
+        </div> 
+    </div>
 
             <div class="col-md-3">
                 <div class="card" style="width: 18rem;">
@@ -178,10 +178,9 @@
 </div>
 
    
-    <?php
-        require_once 'footer.php';
-
-    ?>
+<?php
+require_once 'footer.php';
+?>
  
 
 

@@ -34,3 +34,11 @@
     padding:20px;
 }
 
+.container-fluid imagen{
+    width:100px;
+    height:100px; 
+}
+
+.card{
+    width: 18rem;
+}
