@@ -65,6 +65,7 @@
 
 .card{
     width: 18rem;
+    height: 22rem;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 100px;
@@ -83,15 +84,24 @@
     background: rgba(182, 177, 236, 0.633);
 }
 
-.card-body{
-  
-
+.card-text{
+    font-size: 25px;
 }
 
 .card-body h3{
     font-size: 20px
 }
 
+.modal-body{
+    background: rgba(196, 204, 211, 0.692);
+}
+
+.modal-body> p{
+    border-top: 1px dotted rgb(3, 3, 3);
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 15px;
+}
 .footer{
     background-color: rgba(5, 6, 6, 0.799);
     border-top: 1px dotted rgb(255, 255, 255);
