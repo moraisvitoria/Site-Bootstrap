@@ -35,9 +35,9 @@
 
    <div class="row text-center">
     <div class="col-md-12 sociais">
-      <a href="#"><img src="imagens/facebook.png"></a>
-      <a href="#"><img src="imagens/instagram.png"></a>
-      <a href="#"><img src="imagens/wpp.png"></a>
+      <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
    </div>
 </div>

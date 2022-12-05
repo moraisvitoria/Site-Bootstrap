@@ -5,6 +5,12 @@
     height: 300px;
 }
 
+.dropdown-item:hover{
+    border-left: 4px solid blueviolet;
+    color: blueviolet;
+    transition: 0.3s;
+}
+
 .conteudo{
     padding: 20px
 }
@@ -23,16 +29,39 @@
     height: 200px;
 }
 
-.sociais img {
-    width: 50px;
-    height: 50px;
-}
-
 .sociais {
+    font-size: 40px;
     padding: 25px;
     border-top: 2px dotted rgb(254, 253, 253);
-    background-color: rgba(5, 6, 6, 0.799);
+    background: rgb(49, 48, 51);
     border-bottom: 50px;
+}
+
+.sociais a{
+    display: inline-flex;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    background: blueviolet;
+    color: white;
+    margin: 0 6px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    font-size: 25px;
+}
+
+.sociais a:hover {
+    background: #401f4a;
+}
+
+.sociais a i {
+    transition: 0.4s all;
+}
+
+.sociais a:hover > i {
+    transform: scale(1.5) rotate(15deg);
 }
 
 .tela img{
@@ -50,12 +79,10 @@
 }
 
 .img-roupa h3{
-    color: rgb(38, 31, 140);
+    color: rgb(134, 132, 165);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
 }
-
-
 
 .container-fluid h1{
     margin-top: 50px;
@@ -65,7 +92,7 @@
 
 .card{
     width: 18rem;
-    height: 22rem;
+    height: 24rem;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 100px;
@@ -103,7 +130,7 @@
     font-size: 15px;
 }
 .footer{
-    background-color: rgba(5, 6, 6, 0.799);
+    background: rgb(49, 48, 51);
     border-top: 1px dotted rgb(255, 255, 255);
     
 }
@@ -120,13 +147,14 @@
     color: rgba(255, 228, 196, 0.601);
 }
 
-.navbar-nav a{
+
+.footer ul a{
     color: rgba(255, 228, 196, 0.601);
     text-decoration: none;
     font-size: 20px;
 }
 
-.navbar-nav a:hover{
+.footer ul a:hover{
     padding-left: 30px;
     border-left: 4px solid blueviolet;
     color: blueviolet;
@@ -134,12 +162,12 @@
     
 }
 
-.navbar-nav li a{
+.footer li a{
     margin-top: 10px;
 }
 
 .mapa{
-    background-color: rgba(5, 6, 6, 0.799);
+    background: rgb(49, 48, 51);
     border-top: 1px dotted rgb(255, 255, 255);
 }
 
