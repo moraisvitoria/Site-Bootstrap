@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
+.body{
+    background: rgb(108, 100, 218);
+}
+
 .imagens img{
     width: 100%;
     height: 300px;
@@ -18,6 +22,10 @@
 .conteudo img{
    width:100% ;
    height: 300px;
+}
+
+.img-fluid{
+    border-radius: 50%;
 }
 
 .texto{

@@ -23,15 +23,15 @@ require_once 'menu.php';
     <div class="container-fluid imagens">
         <div class="row">
             <div class="col-md-4">
-                <img src="imagens/academia2.jpg" class="img-fluid">
+                <img src="imagens/academia2.jpg" class="img-flui">
             </div>
 
             <div class="col-md-4">
-                <img src="imagens/academia3.jpg" class="img-fluid">
+                <img src="imagens/academia3.jpg" class="img-flui">
             </div>
 
             <div class="col-md-4">
-                <img src="imagens/academia4.webp" class="img-fluid">
+                <img src="imagens/academia4.webp" class="img-flui">
             </div>
 
         </div>
