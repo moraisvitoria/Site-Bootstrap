@@ -19,10 +19,9 @@
                 Atividades
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Spinning</a>
-                <a class="dropdown-item" href="#">Jumpp</a>
-                <a class="dropdown-item" href="#">Funcional</a>
-                
+                <a class="dropdown-item" href="spinning.php">Spinning</a>
+                <a class="dropdown-item" href="jumpp.php">Jumpp</a>
+                <a class="dropdown-item" href="funcional.php">Funcional</a>
               </div>
             </li>
 
