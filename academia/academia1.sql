@@ -199,7 +199,55 @@ where
 nome like '%Souza';
 
 
+12)Pesquisar a média do preço dos produtos no estoque.
 
-'
+select avg(valor) from produto;
+13)Pesquisar o produto  com menor preço em estoque.
 
+select min(valor) from produto;
 
+14)Pesquisar o produto com maior estoque.
+
+select max(valor) from produto;
+
+15)Pesquisar nome do aluno,telefone,rua,numero da casa e bairro.
+
+select aluno.nome,aluno.telefone,enderço.rua,aluno.numerocasa,endereço.bairro
+from aluno inner join endereço
+on endereço.cep = aluno.cep;
+
+/*Dando um apelido a tabela*/
+
+select a.nome,a.telefone,e.rua,a.numerocasa,e.bairro
+from aluno a inner join endereco e
+on e.cep = a.cep
+
+16)Pesquisar nome da atividade,data da aula e horário de todas as aulas do mês de Dezembro 20222.
+
+select ati.nomeatividade,a.dataaula,a.horário
+from atividade ati inner join aula a
+on ati.idatividade = a.idatividade
+and a,dataaula between '2022-12-01' and '2022-12-31';
+
+17)Pesquisar o nome  e telefone dos professor.
+
+select f.nome,f.telefone 
+from funcionario f inner join professor pr
+on f.cpffuncionario = pr.cpffuncionario;
+
+18)Pesquisar  o nome e valor da venda de todos os funcionarios que fizeram venda no mês de Dezembro.
+
+select f.nome,v.valor
+from funcionario f inner join venda v
+on f.cpffuncionario = v.cpffuncionario
+and  v.data  between '2022-12-01' and '2022-12-31';
+
+19)Pesquisar nome da atividade,nome do aluno,data da aula e horário de todas as aulas do mês de Dezembro 20222.
+
+select ati.nomeatividade,a.dataaula,a.horario,alu.nome
+from atividade ati inner join aula a
+on ati.idatividade = a.idatividade
+inner join aulaaluno aa
+on a.idaula = aa.aluno
+on alu.matricula = aa.matricula
+and a.dataaula between '2022-12-01' and '2022-12-31';
