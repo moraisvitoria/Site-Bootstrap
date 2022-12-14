@@ -22,6 +22,7 @@ create table aluno(
 	numerocasa smallint not null,
 	complemento varchar(30), 
 	foto varchar(255),
+	sexo char(1) not null,
 	foreign key(cep)references endereco(cep));
 	
 create table funcionario(
@@ -33,6 +34,7 @@ create table funcionario(
 	numerocasa smallint not null,
 	complemento varchar(30), 
 	foto varchar(255),
+	sexo char(1) not null,
 	foreign key(cep)references endereco(cep));
 	
 create table professor(
@@ -102,14 +104,14 @@ insert into endereco(cep,rua,bairro,cidade,uf)VALUES
 ('26551-090','Travessa Elpidio','Cruzeiro do Sul','Mesquita','RJ');
 
 
-insert into aluno(nome,telefone,rg,cpf,datanascimento,cep,numerocasa,complemento,foto)VALUES
-('Maria','(21)99886-1055','12555','123456893-10','2001-08-01','23085-610',31,'ap 102','vazio'),
-('Pedro','(21)99999-1055','00012','123456789-10','1997-10-20','26551-090',100,'fundos','vazio');
+insert into aluno(nome,telefone,rg,cpf,datanascimento,cep,numerocasa,complemento,foto,sexo)VALUES
+('Maria','(21)99886-1055','12555','123456893-10','2001-08-01','23085-610',31,'ap 102','vazio','feminino'),
+('Pedro','masculino','(21)99999-1055','00012','123456789-10','1997-10-20','26551-090',100,'fundos','vazio','masculino');
 	
-insert into funcionario(cpffuncionario,nome,telefone,rg,cep,numerocasa,complemento,foto)VALUES
-('123','Mário Silva','(21)9999-8888','0001','23085-610',40,'ap 202','vazio'),
-('456','Gabriel Silva','(21)9999-7777','0002','26551-090',100,'casa','vazio'),
-('789','Mariana Souza','(21)9999-5555','1234','23085-610',1820,'casa','vazio');
+insert into funcionario(cpffuncionario,nome,telefone,rg,cep,numerocasa,complemento,foto,sexo)VALUES
+('123','Mário Silva','(21)9999-8888','0001','23085-610',40,'ap 202','vazio','masculino'),
+('456','Gabriel Silva','(21)9999-7777','0002','26551-090',100,'casa','vazio','masculino'),
+('789','Mariana Souza','(21)9999-5555','1234','23085-610',1820,'casa','vazio','feminino');
 
 insert into professor(disponibilidade,cpffuncionario)VALUES
 ('segunda e sexta dia todo','123'),
@@ -194,10 +196,11 @@ where matricula = 2;
 11)Pesquisar o nome e telefone dos alunos que o último sobrenome é
 Souza.
 
+* Para ACRESCENTAR MAIS UM CRITERIO COLOCAR AND OU OR*/
+
 select nome,telefone from aluno
 where 
-nome like '%Souza';
-
+nome like '%Souza' ;
 
 12)Pesquisar a média do preço dos produtos no estoque.
 
@@ -245,9 +248,32 @@ and  v.data  between '2022-12-01' and '2022-12-31';
 19)Pesquisar nome da atividade,nome do aluno,data da aula e horário de todas as aulas do mês de Dezembro 20222.
 
 select ati.nomeatividade,a.dataaula,a.horario,alu.nome
-from atividade ati inner join aula a
+from atividade ati  inner join aula a
 on ati.idatividade = a.idatividade
 inner join aulaaluno aa
-on a.idaula = aa.aluno
+on a.idaula = aa.idaula 
+inner join aluno alu
 on alu.matricula = aa.matricula
 and a.dataaula between '2022-12-01' and '2022-12-31';
+
+20)pesquisar nome e telefone de todos os personal que tiveram aula no dia 09/12/2022.
+
+select f.nome,f.telefone
+from funcionario f inner join professor p
+on f. cpffuncionario = p. cpffuncionario
+inner join aula a on p.idprofessor = a.idprofessor
+and a.dataaula = '2022-12-09';
+
+21)Pesquisar nome e  telefone de todos os professores que podem dar aulas de spinning.
+select f.nome,f.telefone
+from funcionario f inner join professor p
+ on f. cpffuncionario = p. cpffuncionario
+inner join habilitaprofessor hp
+on p.idprofessor = hp idprofessor
+  inner join atividade
+
+
+22)Mostrar o total de vendas do 5/12/2022.
+
+select sum(valor)  from venda 
+where data = '2022-12-05';
