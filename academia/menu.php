@@ -36,7 +36,9 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Desativado</a>
+                <a href="login.php">
+              <button type="button" class="btn btn-secondary">area do cliente</button>
+              </a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -44,4 +46,6 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
           </form>
         </div>
-    </nav>
+    
+        
+  </nav>
