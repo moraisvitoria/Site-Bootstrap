@@ -35,7 +35,6 @@ require_once 'menu.php';
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dois">
                     Comprar
                   </button>
-
               </div>
             </div>
           </div>

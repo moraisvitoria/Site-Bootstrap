@@ -8,7 +8,6 @@ require_once 'menu.php';
             <div class="col-md-12 text-center tela">
                 <img src="imagens//academia1.jpg" class="img-fluid">
             </div>
-
         </div>
     </div>
 
