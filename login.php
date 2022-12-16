@@ -3,7 +3,7 @@ require_once 'head.php';
 require_once 'menu.php';
 ?>
 
-   <div class="container-fluid texto">
+    <div class="container-fluid login-text">
       <div class="row">
         <div class="col-md-12 text-center">
           <h2>We Fitness</h2>
@@ -34,17 +34,17 @@ require_once 'menu.php';
       <!-- Checkbox -->
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-        <label class="form-check-label" for="form2Example31"> Remember me </label>
+        <label class="form-check-label" for="form2Example31">Lembrar-me</label>
       </div>
     </div>
 
     <div class="col">
       <!-- Simple link -->
-      <a href="#!">Forgot password?</a>
+      <a href="#!">Esqueceu a senha?</a>
     </div>
   </div>
   <!-- Submit button -->
-     <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button> 
+     <button type="button" class="btn btn-primary btn-block mb-4">Entrar</button>
      </div>
   </form>
 </div>
