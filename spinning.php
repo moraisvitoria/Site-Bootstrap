@@ -14,7 +14,7 @@ require_once 'menu.php';
     <div class="container-fluid text-center conteudo">
       <div class="row">
         <div class="col-md-6 col-sm">
-          <img src="imagens/spinning-1.jpg" class="img-fluid">
+          <img src="imagens/spinning-1.jpg" class="img-spin">
         </div>
         <div class="col-md-6 col-sm spin-text">
             <p>Os principais benefícios do spinning para quem pratica são: trabalhar todo o condicionamento físico e muscular, principalmente das pernas e glúteos; ajudar a tonificar as veias e melhorar os movimentos, o que contribui para a redução da pressão arterial, diminuindo os riscos de doenças cardíacas; estabilizar os batimentos cardíacos, assim como corridas e caminhadas; aumenta os níveis de serotonina, responsável pela sensação de bem-estar, além de dar mais disposição e ajudar a relaxar na hora do sono.</p>
@@ -24,7 +24,7 @@ require_once 'menu.php';
     <div class="container-fluid text-center conteudo">
       <div class="row">
         <div class="col-md-6 col-sm">
-          <img src="imagens/spinning-2.jpg" class="img-fluid">
+          <img src="imagens/spinning-2.jpg" class="img-spin">
         </div>
         <div class="col-md-6 col-sm spinning">
           <h3>Benefícios da bicicleta ergométrica</h3>
@@ -37,13 +37,6 @@ require_once 'menu.php';
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
 
 <?php
 require_once 'footer.php';

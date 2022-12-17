@@ -39,6 +39,10 @@
             <li class="nav-item">
               <a class="nav-link" href="login.php">Área do cliente</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="perfil.php">Perfil</a>
+            </li>
           </ul>
 
           

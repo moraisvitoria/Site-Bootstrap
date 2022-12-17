@@ -44,7 +44,7 @@ require_once 'menu.php';
     </div>
   </div>
   <!-- Submit button -->
-     <button type="button" class="btn btn-primary btn-block mb-4">Entrar</button>
+     <button type="button" class="btn btn-primary btn-block mb-4 button-sing-in">Entrar</button>
      </div>
   </form>
 </div>
