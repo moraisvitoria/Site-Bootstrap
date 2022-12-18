@@ -32,7 +32,6 @@ require_once 'menu.php';
             <div class="col-md-4">
                 <img src="imagens/academia4.webp" class="img-flui">
             </div>
-
         </div>
     </div>
 
