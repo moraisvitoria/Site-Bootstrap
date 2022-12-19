@@ -2,6 +2,7 @@
 require_once 'head.php';
 require_once 'menu.php';
 ?>
+    
 
     <div class="container-fluid login-text">
       <div class="row">
@@ -51,12 +52,6 @@ require_once 'menu.php';
     <div class="col-md-4"></div>
   </div>
 </div>
-
-
-
-
-
-
 
 <?php
 require_once 'footer.php';

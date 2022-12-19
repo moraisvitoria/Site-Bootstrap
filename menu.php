@@ -43,6 +43,10 @@
             <li class="nav-item">
               <a class="nav-link" href="perfil.php">Perfil</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="formulario.php">Formulario Aluno</a>
+            </li>
           </ul>
 
           
