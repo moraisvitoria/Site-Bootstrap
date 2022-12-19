@@ -39,6 +39,9 @@
                 <a href="login.php">
               <button type="button" class="btn btn-secondary">area do cliente</button>
               </a>
+              <a href="formualuno.php">
+              <button type="button" class="btn btn-secondary">aluno</button>
+              </a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
