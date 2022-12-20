@@ -170,6 +170,29 @@
     margin-bottom: 50px;
 }
 
+/****** Formulário Aluno*******/
+
+.form-aluno{
+    margin-top: 5%;
+}
+
+.end-form{
+    color: red;
+}
+
+.genero{
+    margin-left: 4px;
+}
+
+.form-radio{
+    color: red;
+    display: block;
+}
+
+.btn-primary{
+    margin-bottom: 25px;
+}
+
 /**** RODAPÉ *****/
 .footer{
     background: rgb(49, 48, 51);
