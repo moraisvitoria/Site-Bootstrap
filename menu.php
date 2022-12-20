@@ -45,7 +45,11 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="formulario.php">Formulario Aluno</a>
+              <a class="nav-link" href="formulario.php">Aluno</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="funcionario.php">Funcionario</a>
             </li>
           </ul>
 

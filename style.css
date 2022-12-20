@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-
-
 .imagens img{
     width: 100%;
     height: 300px;
@@ -11,6 +9,10 @@
     border-left: 4px solid blueviolet;
     color: blueviolet;
     transition: 0.3s;
+}
+
+.nav-item{
+    color: red;
 }
 
 .conteudo{

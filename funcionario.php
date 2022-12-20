@@ -60,36 +60,19 @@ require_once 'head.php';
       </div>
 
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-4">
           <div class="form-group">
             <label for="cep">CEP</label>
-            <input type="text" name="cep" class="form-control" id="cep" onkeypress="$(this).mask('00000-000');"
-            onblur="pesquisacep(this.value);">
+            <input type="text" class="form-control" onkeypress="$(this).mask('00000-000');">
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="form-group">
             <label for="endereco">Endereço</label>
-            <input type="text" class="form-control" id="rua" name="rua">
+            <input type="text" class="form-control">
           </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="bairro">Bairro</label>
-            <input type="text" class="form-control" id="bairro" name="bairro">
-          </div>
-        </div>
-
-        <div class="col-md-2  ">
-              <div class="form-group">
-                 <label for="uf">Estado</label><p>
-                 <input type="text" class="form-control" id="uf" name="uf">
-                </div>
-            </div>
-        </div>
-
 
         <div class="col-md-2">
           <div class="form-group">
@@ -105,13 +88,6 @@ require_once 'head.php';
             <label for="complemento">Complemento</label>
             <input type="text" class="form-control">
           </div>
-        </div>
-
-        <div class="col-md-5">
-              <div class="form-group">
-                 <label for="cidade">Cidade</label><p>
-                 <input type="text" class="form-control" id="cidade" name="cidade">
-                </div>
         </div>
 
         <div class="col-md-4">

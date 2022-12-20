@@ -33,10 +33,10 @@ require_once 'menu.php';
           <h5>3. Segurança</h5>
           <h5>4. Menos impacto nas articulações</h5>
           <h5>5. Alto gasto calórico</h5>
-
         </div>
       </div>
     </div>
+</div>
 
 <?php
 require_once 'footer.php';
