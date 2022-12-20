@@ -35,16 +35,20 @@
 }
 
 
-.container_form{
+.container{
     font-family:'open_sansregular';
-    font-size: 20px;
+    font-size: 10px;
     color: #e0005d;
     border-bottom: 1px #f0eded solid;
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
 
-.form_grupo{
+.form-group{
+    font-family:'open_sansregular';
+    font-size:  10px;
     color: #e0005d;
-
-}
+    border-bottom: 1px #f0eded solid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+} 

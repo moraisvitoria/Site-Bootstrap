@@ -1,64 +1,150 @@
 <?php
- require_once 'head.php';
-require_once 'menu.php';
+    require_once 'head.php';
 ?>
 
-<div class="container_form">
-
-        <h1>Formulário de Cadastro</h1>
-
-         <form class="form" action="#" method="post">
-                
-                <div class="form_grupo">
-                    <label for="nome" class="form_label">Nome</label>
-                    <input type="text" name="nome" class="form_input" id="nome" placeholder="Nome" required>
+<form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" placeholder="Seu nome">    
                 </div>
+            </div>           
 
-                <div class="form_grupo">
-                    <label for="nome" class="form_label">sobrenome</label>
-                    <input type="text" name="sobrenome" class="form_input" id="sobrenome" placeholder="Sobrenome" required>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" onkeypress="$(this).mask('(00)00000-0000')">
                 </div>
+            </div>
 
-                <div class="form_grupo">
-                    <label for="cpf" class="form_label">cpf</label>
-                    <input type="text" cpf="cpf" class="form_input" id="cpf" placeholder="cpf" required>
+            <div class="col-md-3">
+              <div class="form-group">
+                 <label for="sexo">Sexo</label><p>
+                  <input type="radio" name="optradio" checked> Feminino           
+                  <input type="radio" name="optradio"> Masculino
                 </div>
-
-                </div>
-                
-                <div class="form_grupo">
-                    <label for="e-mail" class="form_label">Email</label>
-                    <input type="email" name="email" class="form_input" id="email" placeholder="seuemail@email.com" required>
-                </div>
-
-                </div>
-                
-                <div class="form_grupo">
-                    <label for="datanascimento" class="form_label">Data de Nascimento</label>
-                    <input type="date" name="datanascimento" class="form_input" id="datanascimento" placeholder="Data de Nascimento" required>
-                </div>        
-
-                <div class="form_grupo">
-
-                    <span class="legenda">Sexo:</span>
-                    
-                    <div class="radio-btn">
-                        <input type="radio" class="form_new_input" id="masculino" name="sexo" value="Masculino" required="required">
-                        <label for="masculino" class="radio_label form_label"> <span class="radio_new_btn"></span> Masculino</label>
-                    </div>
-
-                    <div class="radio-btn">
-                        <input type="radio" class="form_new_input" id="feminino" name="sexo" value="Feminino" required="required">
-                        <label for="feminino" class="radio_label form_label"> <span class="radio_new_btn"></span> Feminino</label>
-                    </div>
-
-                       <div class="form-group">
-                        <label for= "telefone"> telefone</label> 
-                        <input type="text" class="form control" onpress="$('(00)00000-0000')">
-                  </div>
+            </div>
+        </div>
         
+        <div class="row">
+            <div class="col-md-3">        
+              <div class="form-group">            
+                  <label for="dn">Data de Nascimento</label>
+                  <input type="date" class="form-control">
+              </div>
+           </div>
+
+            <div class="col-md-3">        
+                <div class="form-group">            
+                    <label for="cpf">Cpf</label>
+                    <input type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00');">
+                </div>
+            </div>
+
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                <label for="rg">RG</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                <label for="cep">cep</label>
+                <input type="text" class="form-control" onblur="pesquisacep(this.value);">
+              </div>
+            </div>
+            <div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                <label for="endereço">endereço</label>
+                <input type="text" class="form-control"
+                id="Rua" name="rua">
+              </div>
+            </div>
+            
+            </div>
+
+        
+          <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                <label for="Número">Número</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+
+            </div>
+
+<div class="col-md-2">
+    <div class="form-group">
+    <label for="complemento">Complemento</label>
+    <input type="text" class="form-control">
+  </div>
+</div>
+</div>
+
+<div class="col-md-2">
+    <div class="form-group">
+    <label for="Bairro">Bairro</label>
+    <input type="text" class="form-control" id="bairro">
+   
+  </div>
+</div>
+</div>
+
+</div>
+<div class= "row">
+<div class="col-md-2">
+    <div class="form-group">
+    <label for="Cidade">Cidade</label>
+    <input type="text" class="form-control" id="cidade">
+  </div>
+
+  </div>
+
+<div class="col-md-3">
+    <div class="form-group">
+    <label for="Estado">Estado</label>
+    <input type="text" class="form-control" id="uf">
+  </div>
+</div>
+</div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Endereço de email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Senha</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+  
+</form>
+
+
+
 <?php
-require_once 'footer.php';
-?>
+    require_once 'rodape.php';
+?>     
 
 
+
+                
+
+
+
+                
