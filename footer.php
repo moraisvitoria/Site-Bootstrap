@@ -3,20 +3,20 @@
     <div class="col-md-3 footer">
     <h4> Institucional</h4>
     <ul class="navbar-nav">
-      <li class="navbar-nav"><a href="#">Home</a></li>
-      <li class="navbar-nav"><a href="#">Nossa Academia</a></li>
-      <li class="navbar-nav"><a href="#">Conheca os Planos</a></li>
-      <li class="navbar-nav"><a href="#">Área do Cliente</a></li>
+      <li class="navbar-nav"><a href="index.php">Home</a></li>
+      <li class="navbar-nav"><a href="index.php">Nossa Academia</a></li>
+      <li class="navbar-nav"><a href="about.php">Conheca os Planos</a></li>
+      <li class="navbar-nav"><a href="login.php">Área do Cliente</a></li>
       </ul>
     </div>
 
    <div class="col-md-3 footer">
       <h4>Atividades</h4>
       <ul class="navbar-nav">
-        <li class="navbar-nav"><a href="#">Spinnig</a></li>
-        <li class="navbar-nav"><a href="#">Jumpp</a></li>
-        <li class="navbar-nav"><a href="#">Funcional</a></li>
-        <li class="navbar-nav"><a href="#">Pilates</a></li>
+        <li class="navbar-nav"><a href="spinning.php">Spinning</a></li>
+        <li class="navbar-nav"><a href="jumpp.php">Jumpp</a></li>
+        <li class="navbar-nav"><a href="funcional.php">Funcional</a></li>
+        <li class="navbar-nav"><a href="pilates.php">Pilates</a></li>
       </ul>
     </div>
     

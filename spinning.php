@@ -6,7 +6,7 @@ require_once 'menu.php';
     <div class="container-fluid texto">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2>Conheça Algumas de Nossas Atividades</h2>
+          <h1>Conheça Algumas de Nossas Atividades</h1>
         </div>
       </div>
     </div>

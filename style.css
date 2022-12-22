@@ -1,9 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
+.container-fluid{
+    background-image: url("imagens/fundo-login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-fluid h1{
+    color: aliceblue;
+    margin-top: 50px;
+    font-family: 'Satisfy', cursive;
+    font-size: 70px;
+}
+
 .imagens img{
     width: 100%;
     height: 300px;
 }
+
+.capa-site{
+    width: 110vw;
+    height: 40vh;
+    margin: 0 auto;
+    background-color: rgb(26, 23, 23);
+}
+
 
 .dropdown-item:hover{
     border-left: 4px solid blueviolet;
@@ -24,53 +45,23 @@
    height: 300px;
 }
 
+.conteudo h3{
+    color: azure;
+}
+
+.conteudo p{
+    color: azure;
+    font-size: 20px;
+}
 .img-fluid{
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 .texto{
     padding: 20px;
+    
 }
 
-.mapa iframe{
-    width: auto;
-    height: 200px;
-}
-
-.sociais {
-    font-size: 40px;
-    padding: 25px;
-    border-top: 2px dotted rgb(254, 253, 253);
-    background: rgb(49, 48, 51);
-    border-bottom: 50px;
-}
-
-.sociais a{
-    display: inline-flex;
-    text-decoration: none;
-    width: 50px;
-    height: 50px;
-    background: blueviolet;
-    color: white;
-    margin: 0 6px;
-    border-radius: 50px;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-    font-size: 25px;
-}
-
-.sociais a:hover {
-    background: #401f4a;
-}
-
-.sociais a i {
-    transition: 0.4s all;
-}
-
-.sociais a:hover > i {
-    transform: scale(1.5) rotate(15deg);
-}
 
 .tela img{
     width: auto;
@@ -92,12 +83,6 @@
     font-size: 15px;
 }
 
-.container-fluid h1{
-    margin-top: 50px;
-    font-family: 'Satisfy', cursive;
-    font-size: 70px;
-}
-
 .spin-text{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -112,6 +97,7 @@
 }
 
 .spinning h5{
+    color: aliceblue;
     padding: 5px;
     font-size: 20px;
     font-weight: 200;
@@ -163,13 +149,17 @@
     font-size: 15px;
 }
 
-.button-sing-in{
-    margin-bottom: 100px;
-}
-
 .login-text{
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.form-label{
+    color: azure;
+}
+
+.form-check-label{
+    color: azure;
 }
 
 /****** Formulário Aluno*******/
@@ -197,13 +187,13 @@
 
 /**** RODAPÉ *****/
 .footer{
-    background: rgb(49, 48, 51);
-    border-top: 1px dotted rgb(255, 255, 255);
+    background: rgb(205, 203, 209);
+    border-top: 1px dotted rgb(3, 3, 3);
     
 }
 
 .footer> h4{
-    color: white;
+    color: rgb(14, 13, 13);
     margin-top: 25px;
     
 }
@@ -211,20 +201,20 @@
 .footer p{
     margin-top: 20px;
     font-size: 20px;
-    color: rgba(255, 228, 196, 0.601);
+    color: rgb(100, 75, 46);
 }
 
 
 .footer ul a{
-    color: rgba(255, 228, 196, 0.601);
+    color: rgb(100, 75, 46);
     text-decoration: none;
     font-size: 20px;
 }
 
 .footer ul a:hover{
     padding-left: 30px;
-    border-left: 4px solid blueviolet;
-    color: blueviolet;
+    border-left: 4px solid rgb(169, 103, 230);
+    color: rgb(124, 97, 148);
     transition: .4s;
     
 }
@@ -233,13 +223,52 @@
     margin-top: 10px;
 }
 
+.sociais {
+    font-size: 40px;
+    padding: 25px;
+    border-top: 2px dotted rgb(0, 0, 0);
+    background: rgb(205, 203, 209);
+    border-bottom: 50px;
+}
+
+.sociais a{
+    display: inline-flex;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    background: blueviolet;
+    color: white;
+    margin: 0 6px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    font-size: 25px;
+}
+
+.sociais a:hover {
+    background: #6b3b7a;
+}
+
+.sociais a i {
+    transition: 0.4s all;
+}
+
+.sociais a:hover > i {
+    transform: scale(1.5) rotate(15deg);
+}
+
 .mapa{
-    background: rgb(49, 48, 51);
-    border-top: 1px dotted rgb(255, 255, 255);
+    background: rgb(205, 203, 209);
+    border-top: 1px dotted rgb(13, 13, 13);
 }
 
 .mapa h4{
-    color: white;
+    color: rgb(0, 0, 0);
     margin-top: 25px;
 }
 
+.mapa iframe{
+    width: auto;
+    height: 200px;
+}

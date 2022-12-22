@@ -3,18 +3,18 @@ require_once 'head.php';
 require_once 'menu.php';
 ?>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center tela">
-                <img src="imagens//academia1.jpg" class="img-fluid">
-            </div>
+<!--<div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img src="imagens" class="capa-site">
         </div>
-    </div>
+      </div>
+    </div>-->
 
     <div class="container-fluid texto">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2>Conheça Algumas de Nossas Atividades</h2>
+          <h1>Conheça Algumas de Nossas Atividades</h1>
         </div>
       </div>
     </div>
@@ -22,15 +22,15 @@ require_once 'menu.php';
     <div class="container-fluid imagens">
         <div class="row">
             <div class="col-md-4">
-                <img src="imagens/academia2.jpg" class="img-flui">
+                <img src="imagens/academia2.jpg" class="img-fluid">
             </div>
 
             <div class="col-md-4">
-                <img src="imagens/academia3.jpg" class="img-flui">
+                <img src="imagens/academia3.jpg" class="img-fluid">
             </div>
 
             <div class="col-md-4">
-                <img src="imagens/academia4.webp" class="img-flui">
+                <img src="imagens/academia4.webp" class="img-fluid">
             </div>
         </div>
     </div>
@@ -73,7 +73,9 @@ require_once 'menu.php';
       </div>
     </div>
  
-  <?php
-  require_once 'footer.php';
 
-  ?>
+
+    
+<?php
+require_once 'footer.php';
+?>

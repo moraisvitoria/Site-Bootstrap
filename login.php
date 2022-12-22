@@ -1,16 +1,15 @@
 <?php
 require_once 'head.php';
-require_once 'menu.php';
 ?>
     
 
-    <div class="container-fluid login-text">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 text-center">
-          <h2>We Fitness</h2>
+        <div class="col-md-12 text-center login-text">
+          <h2>Login</h2>
         </div>
       </div>
-    </div>
+    
 
 <div class="container">
     <div class="row">
