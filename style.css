@@ -7,7 +7,7 @@
 }
 
 .container-fluid h1{
-    color: aliceblue;
+    color: rgba(255, 255, 255, 0.925);
     margin-top: 50px;
     font-family: 'Satisfy', cursive;
     font-size: 70px;
@@ -27,8 +27,8 @@
 
 
 .dropdown-item:hover{
-    border-left: 4px solid blueviolet;
-    color: blueviolet;
+    border-left: 4px solid rgba(34, 91, 156, 0.89);
+    color: rgb(8, 39, 105);
     transition: 0.3s;
 }
 
@@ -261,8 +261,8 @@
 
 .footer ul a:hover{
     padding-left: 30px;
-    border-left: 4px solid rgb(169, 103, 230);
-    color: rgb(124, 97, 148);
+    border-left: 4px solid rgba(34, 91, 156, 0.89);
+    color: rgb(8, 39, 105);
     transition: .4s;
     
 }
@@ -284,7 +284,7 @@
     text-decoration: none;
     width: 50px;
     height: 50px;
-    background: blueviolet;
+    background: rgb(46, 79, 117);
     color: white;
     margin: 0 6px;
     border-radius: 50px;
@@ -295,7 +295,7 @@
 }
 
 .sociais a:hover {
-    background: #6b3b7a;
+    background: #0b1c3f;
 }
 
 .sociais a i {

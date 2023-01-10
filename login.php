@@ -1,12 +1,13 @@
 <?php
-require_once 'head.php';
+require_once 'conexao.php';
+
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 ?>
-    
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 text-center login-text">
-          <h2>Login</h2>
+          <h2>Faça login</h2>
         </div>
       </div>
     
@@ -15,16 +16,18 @@ require_once 'head.php';
     <div class="row">
         <div class="col-md-4"></div>  
         <div class="col-md-4">
-        <form>
+
+  <form id="login-form" class="form" action=""method="post">
+
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="email" id="form2Example1" class="form-control" />
-    <label class="form-label" for="form2Example1">E-mail</label>
+    <input type="text" name="usuario" id="form2Example1" class="form-control" />
+    <label class="form-label" for="form2Example1">Nome de Usuário</label>
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" id="form2Example2" class="form-control" />
+    <input type="password" name="senha" id="form2Example2" class="form-control" />
     <label class="form-label" for="form2Example2">Senha</label>
   </div>
 
@@ -52,6 +55,3 @@ require_once 'head.php';
   </div>
 </div>
 
-<?php
-require_once 'footer.php';
-?>

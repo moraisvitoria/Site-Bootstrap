@@ -22,6 +22,7 @@ create table aluno(
 	complemento varchar(30), 
 	foto varchar(255),
 	email varchar(40)not null,
+	senha varchar(255) not null,
 	foreign key(cep)references endereco(cep));
 	
 create table funcionario(
@@ -36,6 +37,7 @@ create table funcionario(
 	foto varchar(255),
 	cargo varchar(40)not null,
 	email varchar(40)not null,
+	senha varchar(255) not null,
 	foreign key(cep)references endereco(cep));
 	
 create table professor(
@@ -105,14 +107,14 @@ insert into endereco(cep,rua,bairro,cidade,uf)VALUES
 ('26551-090','Travessa Elpidio','Cruzeiro do Sul','Mesquita','RJ');
 
 
-insert into aluno(nome,telefone,rg,cpf,datanascimento,cep,numerocasa,complemento,foto,sexo,email)VALUES
-('Maria','(21)99886-1055','12555','123456893-10','2001-08-01','23085-610',31,'ap 102','https://randomuser.me/api/portraits/women/20.jpg','F','mariasantos@gmail.com'),
-('Pedro','(21)99999-1055','00012','123456789-10','1997-10-20','26551-090',100,'fundos','https://randomuser.me/api/portraits/men/19.jpg','M','pedrosilva@gmail.com');
+insert into aluno(nome,telefone,rg,cpf,datanascimento,cep,numerocasa,complemento,foto,sexo,email,senha)VALUES
+('Maria','(21)99886-1055','12555','123456893-10','2001-08-01','23085-610',31,'ap 102','https://randomuser.me/api/portraits/women/20.jpg','F','mariasantos@gmail.com',123),
+('Pedro','(21)99999-1055','00012','123456789-10','1997-10-20','26551-090',100,'fundos','https://randomuser.me/api/portraits/men/19.jpg','M','pedrosilva@gmail.com',125);
 	
-insert into funcionario(cpffuncionario,nome,telefone,rg,cep,numerocasa,complemento,foto,sexo,cargo,email)VALUES
-('123','Mário Silva','(21)9999-8888','0001','23085-610',40,'ap 202','https://randomuser.me/api/portraits/men/21.jpg','M','professor','mario@silva.com'),
-('456','Gabriel Silva','(21)9999-7777','0002','26551-090',100,'casa','https://randomuser.me/api/portraits/men/22.jpg','M','professor','gabriel@silva.com'),
-('789','Mariana Souza','(21)9999-5555','1234','23085-610',1820,'casa','https://randomuser.me/api/portraits/women/17.jpg','F','recepcionista','mariana@souza.com');
+insert into funcionario(cpffuncionario,nome,telefone,rg,cep,numerocasa,complemento,foto,sexo,cargo,email,senha)VALUES
+('123','Mário Silva','(21)9999-8888','0001','23085-610',40,'ap 202','https://randomuser.me/api/portraits/men/21.jpg','M','professor','mario@silva.com',125),
+('456','Gabriel Silva','(21)9999-7777','0002','26551-090',100,'casa','https://randomuser.me/api/portraits/men/22.jpg','M','professor','gabriel@silva.com',124),
+('789','Mariana Souza','(21)9999-5555','1234','23085-610',1820,'casa','https://randomuser.me/api/portraits/women/17.jpg','F','recepcionista','mariana@souza.com',123);
 
 insert into professor(disponibilidade,cpffuncionario)VALUES
 ('segunda e sexta dia todo','123'),
