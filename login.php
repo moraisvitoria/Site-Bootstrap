@@ -1,7 +1,45 @@
 <?php
-require_once 'conexao.php';
+require_once 'head.php';
+include_once 'conexao.php';
+?>
 
-$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+<?php
+$dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+if (!empty($dadoslogin['btnlogin'])) {
+  $buscalogin = "SELECT matricula, nome, email, senha
+                 FROM aluno
+                 WHERE email =:usuario
+                 LIMIT 1";
+
+$resultado= $conn->prepare($buscalogin);
+$resultado->bindParam(':usuario', $dadoslogin['usuario'],
+PDO::PARAM_STR);
+$resultado->execute();
+
+if(($resultado) AND ($resultado->rowCount() !=0)){
+  $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
+  var_dump($resposta);
+
+if(password_verify($dadoslogin['senha'], $resposta['senha'])){
+  header("Location: administrativo.php");
+  }
+  else{
+    echo "Usuário ou senha Inválido!";
+  }
+
+else {
+  echo "Usuário ou senha Inválido"
+ }
+}
+
+
+
+
+
+
+
+
+// rowCount = numero de linha //
 ?>
 
     <div class="container-fluid">
@@ -12,10 +50,10 @@ $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
       </div>
     
 
-<div class="container">
-    <div class="row">
+   <div class="container">
+      <div class="row">
         <div class="col-md-4"></div>  
-        <div class="col-md-4">
+      <div class="col-md-4">
 
   <form id="login-form" class="form" action=""method="post">
 
@@ -47,11 +85,18 @@ $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     </div>
   </div>
   <!-- Submit button -->
-     <button type="button" class="btn btn-primary btn-block mb-4 button-sing-in">Entrar</button>
+    <div class="form-group">
+      <input type="submit"  class="btn btn-info btn-md" value="Entrar" name="btnlogin">
+      <input type="submit" name="cadastro" class="btn btn-info btn-md" value="Cadastre-se">
+    </div>
      </div>
+     
   </form>
 </div>
     <div class="col-md-4"></div>
   </div>
 </div>
+
+
+
 
