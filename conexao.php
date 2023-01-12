@@ -6,7 +6,7 @@ $idbname="academia1";
 $port="3306";
 
 try{
-    $conn = new PDO("mysql:host=$host;port=$port;dbname" . $idbname, $user, $pass);
+    $conn = new PDO("mysql:host=$host;port=$port;dbname = " . $idbname, $user, $pass);
     echo "Conexão com banco de dados realizado com sucesso!";
 }
 
