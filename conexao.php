@@ -1,15 +1,18 @@
 <?php
-$host="localhost";
-$user="root";
-$pass="";
-$idbname="academia1";
-$port="3306";
+
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "academia1";
+$port = 3306;
 
 try{
-    $conn = new PDO("mysql:host=$host;port=$port;dbname = " . $idbname, $user, $pass);
-    echo "Conexão com banco de dados realizado com sucesso!";
+    
+    $conn = new PDO("mysql:host=$host;port=$port;dbname=" . $dbname, $user, $pass);
+  
+		echo "Conexão com banco de dados realizado com sucesso!";
+}catch(PDOException $erro){
+    echo "Erro: Conexão com banco de dados não realizada".$erro; 
 }
 
-catch(PDOException $error){
-    echo "Error: Conexão com o banco de dados não realizada" . $error;
-}
+?>
