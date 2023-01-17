@@ -124,7 +124,7 @@ require_once 'menu.php';
     <div class="col-md-2  ">
       <div class="form-group">
         <label for="uf">estado</label><p>
-        <input type="text" class="form-control"  name="estado">
+        <input type="text" class="form-control"  name="estado" id="uf">
       </div>
     </div>
   </div>
