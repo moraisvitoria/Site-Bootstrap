@@ -48,7 +48,7 @@ require_once 'menu.php';
     <div class="col-md-4">
       <div class="form-group">
         <label for="rg">RG</label>
-        <input type="text" class="form-control" name="rG">
+        <input type="text" class="form-control" name="RG">
       </div>
     </div>
 
