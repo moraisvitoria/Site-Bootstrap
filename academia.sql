@@ -110,6 +110,8 @@ insert into endereco(cep,rua,bairro,cidade,uf)VALUES
 insert into aluno(nome,telefone,rg,cpf,datanascimento,cep,numerocasa,complemento,foto,sexo,email,senha)VALUES
 ('Maria','(21)99886-1055','12555','123456893-10','2001-08-01','23085-610',31,'ap 102','https://randomuser.me/api/portraits/women/20.jpg','F','mariasantos@gmail.com',123),
 ('Pedro','(21)99999-1055','00012','123456789-10','1997-10-20','26551-090',100,'fundos','https://randomuser.me/api/portraits/men/19.jpg','M','pedrosilva@gmail.com',125);
+( 'Maria das Graças da Silva', '(21)99886-1055', '123456893-10', '12555', '2001-08-01', '23085-610', 31, 'ap 102','https://randomuser.me/api/portraits/women/20.jpg', 'F', 'maria@gmail.com', '344'),
+('Pedro dos Santos', '(21)99999-1052',  '123456789-10', '00012', '1997-10-20', '26551-090', 100, 'fundos','https://randomuser.me/api/portraits/men/19.jpg' , 'M', ' santos@gmail.com', '123');
 	
 insert into funcionario(cpffuncionario,nome,telefone,rg,cep,numerocasa,complemento,foto,sexo,cargo,email,senha)VALUES
 ('123','Mário Silva','(21)9999-8888','0001','23085-610',40,'ap 202','https://randomuser.me/api/portraits/men/21.jpg','M','professor','mario@silva.com',125),
@@ -119,6 +121,7 @@ insert into funcionario(cpffuncionario,nome,telefone,rg,cep,numerocasa,complemen
 insert into professor(disponibilidade,cpffuncionario)VALUES
 ('segunda e sexta dia todo','123'),
 ('terca,quarta e quinta dia todo','456');
+
 
 insert into atividade(nomeatividade,descricao)VALUES
 ('jumpp','atividade realizada pulando em um trampolim'),
