@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-.container-fluid{
-    background-image: url("imagens/fundo-login.jpg");
+/************* PÁGINA PRINCIPAL **************/
+.pag-principal{
+    /* background-image: url("imagens/fundo-login.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
 }
 
 .container-fluid h1{
-    color: rgba(255, 255, 255, 0.925);
+    color: rgba(56, 50, 50, 0.925);
     margin-top: 50px;
     font-family: 'Satisfy', cursive;
     font-size: 70px;
@@ -25,8 +26,6 @@
     margin: 0 auto;
     background-color: rgb(26, 23, 23);
 }
-
-
 
 .dropdown-item:hover{
     border-left: 4px solid rgba(34, 91, 156, 0.89);
@@ -48,11 +47,11 @@
 }
 
 .conteudo h3{
-    color: azure;
+    color: rgb(40, 43, 43);
 }
 
 .conteudo p{
-    color: azure;
+    color: rgb(39, 41, 41);
     font-size: 20px;
 }
 .img-fluid{
@@ -64,14 +63,13 @@
     
 }
 
-
 .tela img{
     width: auto;
     margin-top: -800px;
     display: flex;
     
 }
-
+/* *********************** */
 .img-roupa{
     width: 550px;
     height: 550px;
@@ -166,21 +164,8 @@
 
 /****** Formulário Aluno*******/
 
-.form-aluno{
-    margin-top: 5%;
-}
-
-.end-form{
-    color: red;
-}
-
-.genero{
-    margin-left: 4px;
-}
-
-.form-radio{
-    color: red;
-    display: block;
+.titulo h1{
+   margin-bottom: 25px;
 }
 
 .btn-primary{
@@ -188,7 +173,7 @@
 }
 
 /***** Perfil******/
-.personal-image {
+/* .personal-image {
     margin-top: 25px;
     margin-right: 250px;
     text-align: center;
@@ -233,7 +218,7 @@
     margin-top: 32.5px;
     width: 50px;
     height: 50px;
-}
+} */
 
 /**** RODAPÉ *****/
 .footer{
@@ -322,3 +307,6 @@
     width: auto;
     height: 200px;
 }
+
+/* PÁGINA RELATÓRIO */
+

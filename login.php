@@ -1,8 +1,9 @@
 <?php
-        include_once 'conexao.php';
+  include_once 'conexao.php';
+  // require_once 'head.php';
 
-        session_start();
-	    ob_start();
+  session_start();
+	ob_start();
 ?>
 
 <?php
@@ -14,9 +15,9 @@ $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 if (!empty($dadoslogin['btnlogin'])) {
 
         $buscalogin = "SELECT matricula, nome, email,senha
-                                FROM aluno 
-                                WHERE email =:usuario  and status ='A'
-                                LIMIT 1";
+                       FROM aluno 
+                       WHERE email =:usuario and status = 'A'
+                       LIMIT 1";
 
         $resultado= $conn->prepare($buscalogin);
         $resultado->bindParam(':usuario', $dadoslogin['usuario'], PDO::PARAM_STR);
@@ -50,11 +51,6 @@ if(isset($_SESSION['msg'])){
     echo $_SESSION['msg'];
     unset($_SESSION['msg']);
 }
-
-
-
-
-
 
 ?>
 

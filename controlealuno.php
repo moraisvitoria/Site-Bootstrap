@@ -12,39 +12,43 @@
 
     $dadoscad = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-    var_dump($dadoscad);
+   // var_dump($dadoscad);
 
+
+    if(isset($_FILES['foto'])){
+        $arquivo = ($_FILES['foto']);
+        
+
+        if($arquivo['error']){
+            echo 'Erro ao carregar arquivo';
+            header ("Location: frmaluno.php");
+        }
+
+        $pasta = "fotos/";
+        $nomearquivo = $arquivo['name'];
+        $novonome = uniqid();
+        $extensao = strtolower(pathinfo($nomearquivo, PATHINFO_EXTENSION));
+
+        if($extensao!="jpg" &&$extensao!="png"){
+            die("Tipo não aceito");
+        }
+        else{
+            $salvaimg = move_uploaded_file($arquivo['tmp_name'], $pasta . $novonome . "." . $extensao);
+
+             if($salvaimg){
+                 $path = $pasta . $novonome . "." . $extensao;
+                 echo "ok";
+             }
+
+        }
+
+
+    }
+
+  
     if (!empty($dadoscad['btncad'])) {
 
         $vazio = false;
-
-If(isset($_FILES['foto'])){
-
-
-           if($arquivo['error']) }
-           echo 'Erro ao carregar arquivo';
-           header ("Location: formulario.php");
-            }
-        }
-
-        $pasta ="fotos/";
-        $nomearquivo = $arquivo['name'];
-        $novonome = uniqid();
-        $extensao = strolower(pathinfo($nomearquivo,PATHIINFO_EXTENSION));
-
-        if($extensao!="jpg" && $extensao!="png"){
-            die("Tipo não aceito");
-
-        }
-          else{
-              $salvaimg = move_uploaded_file($arquivo['tmp_name'],$pasta .$novonome.".".$extensao);
-
-              if($salvaimg){
-                  $path = $pasta .$novonome.".".$extensao;
-                  echo"ok";
-              }
-          }  
-
 
         $dadoscad = array_map('trim', $dadoscad);
         if (in_array("", $dadoscad)) {
@@ -87,7 +91,7 @@ if (!$vazio) {
     $salvar->bindParam(':cep', $dadoscad['cep'], PDO::PARAM_STR);
     $salvar->bindParam(':numerocasa', $dadoscad['numero'], PDO::PARAM_INT);
     $salvar->bindParam(':complemento', $dadoscad['complemento'], PDO::PARAM_STR);
-    $salvar->bindParam(':foto', $dadoscad['$path'], PDO::PARAM_STR);
+    $salvar->bindParam(':foto',  $path, PDO::PARAM_STR);
     $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
     $salvar->bindParam(':senha', $senha, PDO::PARAM_STR);
     $salvar->execute();
@@ -142,7 +146,7 @@ if (!empty($dadoscad['btneditar'])) {
     $salvar->bindParam(':cep', $dadoscad['cep'], PDO::PARAM_STR);
     $salvar->bindParam(':numerocasa', $dadoscad['numero'], PDO::PARAM_INT);
     $salvar->bindParam(':complemento', $dadoscad['complemento'], PDO::PARAM_STR);
-    $salvar->bindParam(':foto', $dadoscad['foto'], PDO::PARAM_STR);
+    $salvar->bindParam(':foto', $path , PDO::PARAM_STR);
     $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
     $salvar->bindParam(':matricula', $dadoscad['matricula'], PDO::PARAM_INT);
     $salvar->execute();

@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "academia1";
+$dbname = "academia";
 $port = 3306;
 
 try{
@@ -16,3 +16,5 @@ try{
 }
 
 ?>
+
+<!-- // dontpad.com/mulherestech // -->

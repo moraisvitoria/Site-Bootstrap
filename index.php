@@ -11,7 +11,7 @@ require_once 'menu.php';
       </div>
     </div>-->
 
-    <div class="container-fluid texto">
+    <div class="container-fluid pag-principal">
       <div class="row">
         <div class="col-md-12 text-center">
           <h1>Conheça Algumas de Nossas Atividades</h1>

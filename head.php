@@ -16,6 +16,6 @@
     
     <script src="scripts/cep.js"></script>
 
-    <title>We Fitness</title>
+    <title>academia</title>
   </head>
   <body>
