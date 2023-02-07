@@ -1,162 +1,114 @@
 <?php
-require_once 'head.php';
-require_once 'menu.php';
+    require_once 'head.php';
+    require_once 'menu.php';
+    include_once 'conexao.php';
+
+
+    $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
+    $pag = (!empty($pagatual)) ? $pagatual : 1;
+
+      $limitereg = 6;
+
+      $inicio = ($limitereg * $pag) - $limitereg;
+
+      $busca= "SELECT p.codigoproduto,p.nome,p.valor,p.foto
+      FROM produto p,categoria c WHERE 
+      c.idcategoria = p.idcategoria and
+      c.nomecategoria = 'suplemento' and
+      p.quantidade > 0 LIMIT $inicio , $limitereg";
+
+      $resultado = $conn->prepare($busca);
+      $resultado->execute();  
+        
+     
 ?>
   
-  <div class="container-fluid">
+      <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 text-center tela">
-                <h1>Desempenho físico</h1>
-            </div>
+          <div class="col-md-12 text-center tela">
+            <h1>Desempenho físico</h1>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="container-fluid imagens">
-        <div class="row">
+      <div class="container-fluid imagens">
+        <div class="row"> 
+
+         <?php
+        if (($resultado) AND ($resultado->rowCount() != 0)){
+        while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {
+           
+            extract($linha);             
+        
+        ?>    
+
+    
           <div class="col-md-3">
             <div class="card">
-             <img class="card-img-top" src="imagens/suplemento.png">
-             <div class="card-body">
-                <h2 class="card-text">Creatina</h2>
-                <h3>R$ 79,90</h3>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#suple1">
-                    Comprar
-                </button>
-            </div>
+              <img class="card-img-top" src="<?php echo $foto; ?>">
+                <div class="card-body">
+                  <h2 class="card-text"><?php echo $nome; ?></h2>
+                  <h3>Preço R$ <?php echo $valor; ?>,00</h3>
+
+              <form action="carrinho.php" method="post">
+                  <h5>
+                    <label>Quant</label>
+                    <input type="number" name="quantcompra" value="1" style=width:45px;>
+                  </h5>
+                    <input type="hidden" name="codigoproduto" value="<?php echo $codigoproduto; ?>">
+                    <input type="submit" class="btn btn-primary" value="comprar">
+              </form>
         </div>
-    </div>
-
-        <div class="col-md-3">
-            <div class="card">
-              <img class="card-img-top" src="imagens/suplemento-2.png">
-              <div class="card-body">
-                  <h2 class="card-text">BCAA</h2>
-                  <h3>R$ 59,90</h3>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#suple2">
-                    Comprar
-                  </button>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-              <img class="card-img-top" src="imagens/suplemento-3.png">
-              <div class="card-body">
-                  <h2 class="card-text">Nitro Tech Power</h2>
-                  <h3>R$ 45,00</h3>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#suple3">
-                    Comprar
-                  </button>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-              <img class="card-img-top" src="imagens/suplemento-4.png">
-              <div class="card-body">
-                  <h2 class="card-text">Pro Gainer</h2>
-                  <h3>R$ 39,99</h3>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#suple4">
-                    Comprar
-                  </button>
-              </div>
-            </div>
-        </div>
-
-    <div class="modal fade" id="suple1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Creatina</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-
-      <div class="modal-body">
-        <img class="img-fluid" src="imagens/suplemento.png">
-        <p>A Creatina é um composto de aminoácidos presente nas fibras musculares, atua ativamente na síntese proteica e no aumento da resistência muscular.</p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Adicionar carrinho</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="suple2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">BCAA</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <img class="img-fluid" src="imagens/suplemento-2.png">
-        <p>O BCAA funciona na prevenção da fadiga muscular. O suplemento também pode te ajudar em diversas outras coisas, como na regulação do sistema imunológico, no aumento da performance e também para aumentar a velocidade do metabolismo e emagrecer.</p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Adicionar carrinho</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="suple3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nitro Tech Power</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <img class="img-fluid" src="imagens/suplemento-3.png">
-        <p>O Nitro Tech é um produto elaborado à base de proteína de whey de elevada pureza, enriquecida com creatina e aminoácidos para conseguir uma fórmula superior, perfeita para uma ótima recuperação muscular após o treino e promover ganhos máximos de força e massa muscular.</p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Adicionar carrinho</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="suple4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pro Gainer</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <img class="img-fluid" src="imagens/suplemento-4.png">
-        <p>Pro Gainers Prodark é uma fórmula desenvolvida especialmente para séries de treinamento voltadas ao ganho de peso através do desenvolvimento muscular.</p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Adicionar carrinho</button>
-      </div>
-    </div>
-  </div>
-</div>
+          </div>
+          </div>
+       
+       
 
 <?php
-require_once 'footer.php';
+        }
+      }
 ?>
+
+
+
+    </div>
+<?php
+     //Contar os registros no banco
+     $qtregistro = "SELECT COUNT(codigoproduto) AS registros FROM produto";
+     $resultado = $conn->prepare($qtregistro);
+     $resultado->execute();
+     $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
+
+     //Quantidade de página que serão usadas - quantidade de registros
+     //dividido pela quantidade de registro por página
+     $qnt_pagina = ceil($resposta['registros'] / $limitereg);
+
+      // Maximo de links      
+      $maximo = 2;
+
+      echo "<a href='relprodutos.php?page=1'>Primeira</a> ";
+    // Chamar página anterior verificando a quantidade de páginas menos 1 e 
+    // também verificando se já não é primeira página
+    for ($anterior = $pag - $maximo; $anterior <= $pag - 1; $anterior++) {
+        if ($anterior >= 1) {
+            echo "  <a href='relprodutos.php?page=$anterior'>$anterior</a> ";
+        }
+    }
+
+    //Mostrar a página ativa
+    echo "$pag";
+
+    //Chamar próxima página, ou seja, verificando a página ativa e acrescentando 1
+    // a ela
+    for ($proxima = $pag + 1; $proxima <= $pag + $maximo; $proxima++) {
+        if ($proxima <= $qnt_pagina) {
+            echo "<a href='relprodutos.php?page=$proxima'>$proxima</a> ";
+        }
+    }
+
+    echo "<a href='relprodutos.php?page=$qnt_pagina'>Última</a> ";
+
+
+?>
+
+

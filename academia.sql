@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01/02/2023 às 17:42
+-- Tempo de geração: 07-Fev-2023 às 21:08
 -- Versão do servidor: 10.4.24-MariaDB
--- Versão do PHP: 8.1.6
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ USE `academia`;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aluno`
+-- Estrutura da tabela `aluno`
 --
 
 CREATE TABLE `aluno` (
@@ -47,7 +47,7 @@ CREATE TABLE `aluno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `aluno`
+-- Extraindo dados da tabela `aluno`
 --
 
 INSERT INTO `aluno` (`matricula`, `nome`, `telefone`, `sexo`, `cpf`, `rg`, `datanascimento`, `cep`, `numerocasa`, `complemento`, `foto`, `email`, `senha`, `status`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `aluno` (`matricula`, `nome`, `telefone`, `sexo`, `cpf`, `rg`, `data
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividade`
+-- Estrutura da tabela `atividade`
 --
 
 CREATE TABLE `atividade` (
@@ -68,7 +68,7 @@ CREATE TABLE `atividade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `atividade`
+-- Extraindo dados da tabela `atividade`
 --
 
 INSERT INTO `atividade` (`idatividade`, `nomeatividade`, `descricao`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `atividade` (`idatividade`, `nomeatividade`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aula`
+-- Estrutura da tabela `aula`
 --
 
 CREATE TABLE `aula` (
@@ -90,7 +90,7 @@ CREATE TABLE `aula` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `aula`
+-- Extraindo dados da tabela `aula`
 --
 
 INSERT INTO `aula` (`idaula`, `dataaula`, `horario`, `idprofessor`, `idatividade`) VALUES
@@ -101,7 +101,7 @@ INSERT INTO `aula` (`idaula`, `dataaula`, `horario`, `idprofessor`, `idatividade
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aulaaluno`
+-- Estrutura da tabela `aulaaluno`
 --
 
 CREATE TABLE `aulaaluno` (
@@ -111,7 +111,7 @@ CREATE TABLE `aulaaluno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `aulaaluno`
+-- Extraindo dados da tabela `aulaaluno`
 --
 
 INSERT INTO `aulaaluno` (`idaulaaluno`, `matricula`, `idaula`) VALUES
@@ -122,7 +122,28 @@ INSERT INTO `aulaaluno` (`idaulaaluno`, `matricula`, `idaula`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categoria`
+-- Estrutura da tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `codigoproduto` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `valor` double NOT NULL,
+  `quantcompra` int(11) NOT NULL,
+  `foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `carrinho`
+--
+
+INSERT INTO `carrinho` (`codigoproduto`, `nome`, `valor`, `quantcompra`, `foto`) VALUES
+(5, 'suplemento 1', 50, 3, 'produtos/63e29d54aecd3.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -131,7 +152,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `categoria`
+-- Extraindo dados da tabela `categoria`
 --
 
 INSERT INTO `categoria` (`idcategoria`, `nomecategoria`) VALUES
@@ -143,7 +164,7 @@ INSERT INTO `categoria` (`idcategoria`, `nomecategoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `funcionario`
+-- Estrutura da tabela `funcionario`
 --
 
 CREATE TABLE `funcionario` (
@@ -161,7 +182,7 @@ CREATE TABLE `funcionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `funcionario`
+-- Extraindo dados da tabela `funcionario`
 --
 
 INSERT INTO `funcionario` (`cpffuncionario`, `nome`, `telefone`, `sexo`, `rg`, `cep`, `numerocasa`, `complemento`, `foto`, `email`, `senha`) VALUES
@@ -172,7 +193,7 @@ INSERT INTO `funcionario` (`cpffuncionario`, `nome`, `telefone`, `sexo`, `rg`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `habilitaprofessor`
+-- Estrutura da tabela `habilitaprofessor`
 --
 
 CREATE TABLE `habilitaprofessor` (
@@ -182,7 +203,7 @@ CREATE TABLE `habilitaprofessor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `habilitaprofessor`
+-- Extraindo dados da tabela `habilitaprofessor`
 --
 
 INSERT INTO `habilitaprofessor` (`idhabilitacao`, `idatividade`, `idprofessor`) VALUES
@@ -193,7 +214,20 @@ INSERT INTO `habilitaprofessor` (`idhabilitacao`, `idatividade`, `idprofessor`) 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produto`
+-- Estrutura da tabela `item`
+--
+
+CREATE TABLE `item` (
+  `iditem` int(11) NOT NULL,
+  `idvenda` int(11) NOT NULL,
+  `codigoproduto` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -208,19 +242,22 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `produto`
+-- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`codigoproduto`, `nome`, `cor`, `valor`, `tamanho`, `quantidade`, `idcategoria`, `foto`) VALUES
 (1, 'mochila Paloma', 'rosa', 150, 'un', 20, 1, ''),
 (2, 'mochila Raissa', 'azul', 120, 'un', 30, 1, ''),
 (3, 'mochila amanda', 'preta', 50.85, 'M', 30, 1, 'produtos/63d964567a504.jpg'),
-(4, 'mochila agatha', 'azul', 100.6, 'G', 10, 1, 'produtos/63d9649fb4542.jpg');
+(4, 'mochila agatha', 'azul', 100.6, 'G', 10, 1, 'produtos/63d9649fb4542.jpg'),
+(5, 'suplemento 1', 'un', 50, 'un', 30, 3, 'produtos/63e29d54aecd3.jpg'),
+(6, 'suplemento 2', 'un', 100, 'un', 50, 3, 'produtos/63e29d68ecfb3.jpg'),
+(7, 'suplemento 3', 'un', 150, 'un', 100, 3, 'produtos/63e29d7eaab05.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professor`
+-- Estrutura da tabela `professor`
 --
 
 CREATE TABLE `professor` (
@@ -230,7 +267,7 @@ CREATE TABLE `professor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Despejando dados para a tabela `professor`
+-- Extraindo dados da tabela `professor`
 --
 
 INSERT INTO `professor` (`idprofessor`, `disponibilidade`, `cpffuncionario`) VALUES
@@ -240,45 +277,35 @@ INSERT INTO `professor` (`idprofessor`, `disponibilidade`, `cpffuncionario`) VAL
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `venda`
+-- Estrutura da tabela `venda`
 --
 
 CREATE TABLE `venda` (
   `idvenda` int(11) NOT NULL,
   `data` date NOT NULL,
   `valor` double NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `codigoproduto` int(11) NOT NULL,
-  `cpffuncionario` char(14) NOT NULL
+  `matricula` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Despejando dados para a tabela `venda`
---
-
-INSERT INTO `venda` (`idvenda`, `data`, `valor`, `quantidade`, `codigoproduto`, `cpffuncionario`) VALUES
-(1, '2022-12-05', 300, 2, 1, '789'),
-(2, '2022-12-05', 120, 1, 2, '789');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `aluno`
+-- Índices para tabela `aluno`
 --
 ALTER TABLE `aluno`
   ADD PRIMARY KEY (`matricula`),
   ADD KEY `cep` (`cep`);
 
 --
--- Índices de tabela `atividade`
+-- Índices para tabela `atividade`
 --
 ALTER TABLE `atividade`
   ADD PRIMARY KEY (`idatividade`);
 
 --
--- Índices de tabela `aula`
+-- Índices para tabela `aula`
 --
 ALTER TABLE `aula`
   ADD PRIMARY KEY (`idaula`),
@@ -286,7 +313,7 @@ ALTER TABLE `aula`
   ADD KEY `idatividade` (`idatividade`);
 
 --
--- Índices de tabela `aulaaluno`
+-- Índices para tabela `aulaaluno`
 --
 ALTER TABLE `aulaaluno`
   ADD PRIMARY KEY (`idaulaaluno`),
@@ -294,20 +321,20 @@ ALTER TABLE `aulaaluno`
   ADD KEY `idaula` (`idaula`);
 
 --
--- Índices de tabela `categoria`
+-- Índices para tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`idcategoria`);
 
 --
--- Índices de tabela `funcionario`
+-- Índices para tabela `funcionario`
 --
 ALTER TABLE `funcionario`
   ADD PRIMARY KEY (`cpffuncionario`),
   ADD KEY `cep` (`cep`);
 
 --
--- Índices de tabela `habilitaprofessor`
+-- Índices para tabela `habilitaprofessor`
 --
 ALTER TABLE `habilitaprofessor`
   ADD PRIMARY KEY (`idhabilitacao`),
@@ -315,29 +342,36 @@ ALTER TABLE `habilitaprofessor`
   ADD KEY `idprofessor` (`idprofessor`);
 
 --
--- Índices de tabela `produto`
+-- Índices para tabela `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`iditem`),
+  ADD KEY `fk_produto` (`codigoproduto`),
+  ADD KEY `fk_venda` (`idvenda`);
+
+--
+-- Índices para tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`codigoproduto`),
   ADD KEY `fk_categoria` (`idcategoria`);
 
 --
--- Índices de tabela `professor`
+-- Índices para tabela `professor`
 --
 ALTER TABLE `professor`
   ADD PRIMARY KEY (`idprofessor`),
   ADD KEY `cpffuncionario` (`cpffuncionario`);
 
 --
--- Índices de tabela `venda`
+-- Índices para tabela `venda`
 --
 ALTER TABLE `venda`
   ADD PRIMARY KEY (`idvenda`),
-  ADD KEY `codigoproduto` (`codigoproduto`),
-  ADD KEY `cpffuncionario` (`cpffuncionario`);
+  ADD KEY `cpffuncionario` (`matricula`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -380,7 +414,7 @@ ALTER TABLE `habilitaprofessor`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
@@ -395,48 +429,54 @@ ALTER TABLE `venda`
   MODIFY `idvenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `aula`
+-- Limitadores para a tabela `aula`
 --
 ALTER TABLE `aula`
   ADD CONSTRAINT `aula_ibfk_1` FOREIGN KEY (`idprofessor`) REFERENCES `professor` (`idprofessor`),
   ADD CONSTRAINT `aula_ibfk_2` FOREIGN KEY (`idatividade`) REFERENCES `atividade` (`idatividade`);
 
 --
--- Restrições para tabelas `aulaaluno`
+-- Limitadores para a tabela `aulaaluno`
 --
 ALTER TABLE `aulaaluno`
   ADD CONSTRAINT `aulaaluno_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `aluno` (`matricula`),
   ADD CONSTRAINT `aulaaluno_ibfk_2` FOREIGN KEY (`idaula`) REFERENCES `aula` (`idaula`);
 
 --
--- Restrições para tabelas `habilitaprofessor`
+-- Limitadores para a tabela `habilitaprofessor`
 --
 ALTER TABLE `habilitaprofessor`
   ADD CONSTRAINT `habilitaprofessor_ibfk_1` FOREIGN KEY (`idatividade`) REFERENCES `atividade` (`idatividade`),
   ADD CONSTRAINT `habilitaprofessor_ibfk_2` FOREIGN KEY (`idprofessor`) REFERENCES `professor` (`idprofessor`);
 
 --
--- Restrições para tabelas `produto`
+-- Limitadores para a tabela `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `fk_produto` FOREIGN KEY (`codigoproduto`) REFERENCES `produto` (`codigoproduto`),
+  ADD CONSTRAINT `fk_venda` FOREIGN KEY (`idvenda`) REFERENCES `venda` (`idvenda`);
+
+--
+-- Limitadores para a tabela `produto`
 --
 ALTER TABLE `produto`
   ADD CONSTRAINT `fk_categoria` FOREIGN KEY (`idcategoria`) REFERENCES `categoria` (`idcategoria`);
 
 --
--- Restrições para tabelas `professor`
+-- Limitadores para a tabela `professor`
 --
 ALTER TABLE `professor`
   ADD CONSTRAINT `professor_ibfk_1` FOREIGN KEY (`cpffuncionario`) REFERENCES `funcionario` (`cpffuncionario`);
 
 --
--- Restrições para tabelas `venda`
+-- Limitadores para a tabela `venda`
 --
 ALTER TABLE `venda`
-  ADD CONSTRAINT `venda_ibfk_1` FOREIGN KEY (`codigoproduto`) REFERENCES `produto` (`codigoproduto`),
-  ADD CONSTRAINT `venda_ibfk_2` FOREIGN KEY (`cpffuncionario`) REFERENCES `funcionario` (`cpffuncionario`);
+  ADD CONSTRAINT `fk@aluno` FOREIGN KEY (`matricula`) REFERENCES `aluno` (`matricula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

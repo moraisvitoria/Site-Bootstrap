@@ -1,3 +1,14 @@
+<?php
+
+  session_start();
+  ob_start();
+
+    if(!isset($_SESSION["quant"])){
+      $_SESSION["quant"]=0;
+    }
+
+?>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
         <a class="navbar-brand" href="index.php">We Fitness</a>
@@ -37,11 +48,20 @@
                 <a class="dropdown-item" href="mochilas.php">Mochilas</a>
               </div>
 
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target= -->
             <li class="nav-item">
               <a class="nav-link" href="login.php">Área do cliente</a>
             </li>
+            
+            <a href="frmcarrinho.php">
+            <img scr="imagens/carrinho.png" style=width:50px;height:50px;></a>
+              <?php 
+                  if($_SESSION["quant"]>0) {
+                    echo $_SESSION["quant"];
+                }
+               ?>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="perfil.php">Perfil</a>
             </li>
 
@@ -55,7 +75,7 @@
 
             <li class="nav-item">
               <a class="nav-link" href="admin.php">Administrativo</a>
-            </li>
+            </li> -->
           </ul>
 
           

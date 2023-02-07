@@ -8,4 +8,4 @@ require_once 'menu.php';
 
 <a href="formulario.php"><button type="submit">Cadastro de Aluno</button>
 <a href="relalunos.php"><button type="submit">Relatório de Alunos</button>
-<a href="relaproduto.php"><button type="submit">Relatório de produto</button>
+<a href="relproduto.php"><button type="submit">Relatório de Produtos</button>
