@@ -1,8 +1,14 @@
 <?php
     session_star();
+    ob_start();
     
     require_once 'head.php';
     include_once 'conexao.php';
+
+    if(isset($_SESSION['msg'])) {
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }    
 
     $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
 	$pag = (!empty($pagatual)) ? $pagatual : 1;
@@ -74,9 +80,7 @@
 
   $qtregistro = "SELECT COUNT(codigoproduto) 
                  AS registros 
-                 FROM produto" ;
-                
-                
+                 FROM produto";
   $resultado = $conn->prepare($qtregistro);
   $resultado->execute();
   $resposta = $resultado->fetch(PDO::FETCH_ASSOC);

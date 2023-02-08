@@ -53,13 +53,13 @@
               <a class="nav-link" href="login.php">Área do cliente</a>
             </li>
             
-            <a href="frmcarrinho.php">
-            <img scr="imagens/carrinho.png" style=width:50px;height:50px;></a>
+            <a href="frmcarrinho.php"><img src="imagens/carrinho.png" style=width:35px;height:35px;></a>
+
               <?php 
-                  if($_SESSION["quant"]>0) {
-                    echo $_SESSION["quant"];
+                if($_SESSION["quant"]>0){
+                  echo $_SESSION["quant"]; 
                 }
-               ?>
+              ?>
 
             <!-- <li class="nav-item">
               <a class="nav-link" href="perfil.php">Perfil</a>

@@ -1,9 +1,8 @@
 <?php
-  include_once 'conexao.php';
-  // require_once 'head.php';
+        include_once 'conexao.php';
 
-  session_start();
-	ob_start();
+        session_start();
+	    ob_start();
 ?>
 
 <?php
@@ -15,9 +14,9 @@ $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 if (!empty($dadoslogin['btnlogin'])) {
 
         $buscalogin = "SELECT matricula, nome, email,senha
-                       FROM aluno 
-                       WHERE email =:usuario and status = 'A'
-                       LIMIT 1";
+                                FROM aluno 
+                                WHERE email =:usuario and status ='A' 
+                                LIMIT 1";
 
         $resultado= $conn->prepare($buscalogin);
         $resultado->bindParam(':usuario', $dadoslogin['usuario'], PDO::PARAM_STR);
@@ -31,18 +30,16 @@ if (!empty($dadoslogin['btnlogin'])) {
             if(password_verify($dadoslogin['senha'], $resposta['senha'])){
                 
                 $_SESSION['nome'] = $resposta['nome'];
-                If($_SESSION["carrinho"]==true){
-                    $_SESSION["matricula"] = $resposta["matricula"];
-                    header("LOCATION: frmcarrinho.php");
+                $_SESSION["matricula"] = $resposta["matricula"];
+
+                if($_SESSION["carrinho"]==true){
+                    
+                    header("Location: frmcarrinho.php");
                 }
-                else{
-                header("Location: administrativo.php");
+                else{       
+                    header("Location: administrativo.php");
+                }
 
-
-
-
-
-                
             }
             else{
                 $_SESSION['msg'] = "Erro: Usuário ou senha inválida!";
@@ -61,6 +58,11 @@ if(isset($_SESSION['msg'])){
     echo $_SESSION['msg'];
     unset($_SESSION['msg']);
 }
+
+
+
+
+
 
 ?>
 
