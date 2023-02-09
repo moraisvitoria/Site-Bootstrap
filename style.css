@@ -5,12 +5,12 @@ body{
 }
 
 /************* PÁGINA PRINCIPAL **************/
-.pag-principal{
-    /* background-image: url("imagens/fundo-login.jpg"); */
+/* .pag-principal{
+    background-image: url("imagens/fundo-login.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-}
+} */
 
 .container-fluid h1{
     color: rgba(56, 50, 50, 0.925);

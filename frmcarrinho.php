@@ -39,8 +39,8 @@
                          $totalcompra += $total; ?></td>
          
             <td>
-                <input type="hidden" name="codigo" value="<?php echo $codigoproduto; ?>">          
-                <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
+                          
+                <a href ="finalizar.php"><button type="submit" class="btn btn-danger" name="excluir" value="<?php echo $codigoproduto; ?>"></a> 
             </td>
         </tr>        
          
@@ -56,7 +56,9 @@
 
     <?php $_SESSION["totalcompra"]=$totalcompra; ?>
 
-    <input type="submit" class="btn btn-sucess" name="finalizar" value="Finalizar compra">
+    td>                 
+             <a href="finaliza.php"><button type="submit" class="btn btn-danger" name="excluir" value="<?php echo $codigoproduto; ?>">Excluir</button></a>
+          </td>
  </form>
 <?php
     }

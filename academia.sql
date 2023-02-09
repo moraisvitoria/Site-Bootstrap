@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Fev-2023 às 20:59
+-- Tempo de geração: 07-Fev-2023 às 21:06
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `academia`
 --
+CREATE DATABASE IF NOT EXISTS `academia` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `academia`;
 
 -- --------------------------------------------------------
 
@@ -139,16 +141,7 @@ INSERT INTO `carrinho` (`codigoproduto`, `nome`, `valor`, `quantcompra`, `foto`)
 (6, 'BCAA', 50, 1, 'produtos/63e28c4254bdd.png'),
 (5, 'Creatina', 45, 2, 'produtos/63e28c1db5e6f.png'),
 (7, 'Nitro', 70, 1, 'produtos/63e28c64d8d39.png'),
-(8, 'ProGanner', 55, 2, 'produtos/63e28ca33a643.png'),
-(6, 'BCAA', 50, 1, 'produtos/63e28c4254bdd.png'),
-(5, 'Creatina', 45, 2, 'produtos/63e28c1db5e6f.png'),
-(7, 'Nitro', 70, 1, 'produtos/63e28c64d8d39.png'),
-(8, 'ProGanner', 55, 2, 'produtos/63e28ca33a643.png'),
-(6, 'BCAA', 50, 1, 'produtos/63e28c4254bdd.png'),
-(5, 'Creatina', 45, 1, 'produtos/63e28c1db5e6f.png'),
-(7, 'Nitro', 70, 1, 'produtos/63e28c64d8d39.png'),
-(8, 'ProGanner', 55, 1, 'produtos/63e28ca33a643.png'),
-(8, 'ProGanner', 55, 3, 'produtos/63e28ca33a643.png');
+(8, 'ProGanner', 55, 2, 'produtos/63e28ca33a643.png');
 
 -- --------------------------------------------------------
 
@@ -231,8 +224,7 @@ CREATE TABLE `item` (
   `iditem` int(11) NOT NULL,
   `idvenda` int(11) NOT NULL,
   `codigoproduto` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `valor` double NOT NULL
+  `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -264,8 +256,7 @@ INSERT INTO `produto` (`codigoproduto`, `nome`, `cor`, `valor`, `tamanho`, `quan
 (5, 'Creatina', 'uni', 45, '30', 50, 3, 'produtos/63e28c1db5e6f.png'),
 (6, 'BCAA', 'uni', 50, '30', 30, 3, 'produtos/63e28c4254bdd.png'),
 (7, 'Nitro', 'uni', 70, '50', 100, 3, 'produtos/63e28c64d8d39.png'),
-(8, 'ProGanner', 'uni', 55, '50', 50, 3, 'produtos/63e28ca33a643.png'),
-(9, 'mochila', 'rosa', 35, 'me', 40, 1, 'produtos/63e3fcc000ef3.jpg');
+(8, 'ProGanner', 'uni', 55, '50', 50, 3, 'produtos/63e28ca33a643.png');
 
 -- --------------------------------------------------------
 
@@ -433,13 +424,69 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
 --
 ALTER TABLE `professor`
   MODIFY `idprofessor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `venda`
+--
+ALTER TABLE `venda`
+  MODIFY `idvenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `aula`
+--
+ALTER TABLE `aula`
+  ADD CONSTRAINT `aula_ibfk_1` FOREIGN KEY (`idprofessor`) REFERENCES `professor` (`idprofessor`),
+  ADD CONSTRAINT `aula_ibfk_2` FOREIGN KEY (`idatividade`) REFERENCES `atividade` (`idatividade`);
+
+--
+-- Limitadores para a tabela `aulaaluno`
+--
+ALTER TABLE `aulaaluno`
+  ADD CONSTRAINT `aulaaluno_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `aluno` (`matricula`),
+  ADD CONSTRAINT `aulaaluno_ibfk_2` FOREIGN KEY (`idaula`) REFERENCES `aula` (`idaula`);
+
+--
+-- Limitadores para a tabela `habilitaprofessor`
+--
+ALTER TABLE `habilitaprofessor`
+  ADD CONSTRAINT `habilitaprofessor_ibfk_1` FOREIGN KEY (`idatividade`) REFERENCES `atividade` (`idatividade`),
+  ADD CONSTRAINT `habilitaprofessor_ibfk_2` FOREIGN KEY (`idprofessor`) REFERENCES `professor` (`idprofessor`);
+
+--
+-- Limitadores para a tabela `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `fk_produto` FOREIGN KEY (`codigoproduto`) REFERENCES `produto` (`codigoproduto`),
+  ADD CONSTRAINT `fk_venda` FOREIGN KEY (`idvenda`) REFERENCES `venda` (`idvenda`);
+
+--
+-- Limitadores para a tabela `produto`
+--
+ALTER TABLE `produto`
+  ADD CONSTRAINT `fk_categoria` FOREIGN KEY (`idcategoria`) REFERENCES `categoria` (`idcategoria`);
+
+--
+-- Limitadores para a tabela `professor`
+--
+ALTER TABLE `professor`
+  ADD CONSTRAINT `professor_ibfk_1` FOREIGN KEY (`cpffuncionario`) REFERENCES `funcionario` (`cpffuncionario`);
+
+--
+-- Limitadores para a tabela `venda`
+--
+ALTER TABLE `venda`
+  ADD CONSTRAINT `fk_aluno` FOREIGN KEY (`matricula`) REFERENCES `aluno` (`matricula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
